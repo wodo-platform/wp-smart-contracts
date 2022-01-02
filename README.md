@@ -70,8 +70,8 @@ Wodo gaming contracts are located in "contracts/wodo" folder. All other openzepp
 
 The contracts are deployed to BCS test networks. you can find the deatils and sourcecode of the contracts in the following links
 
-XWGT Token:     https://testnet.bscscan.com/address/0x726Dc93175B455c1483fD31D2DF15C49275608b4
-Vesting Wallet: https://testnet.bscscan.com/address/0xF97Dca31ecC72b287b8Ac6b1a06589B71652FEc5
+- XWGT Token:     https://testnet.bscscan.com/address/0x726Dc93175B455c1483fD31D2DF15C49275608b4
+- Vesting Wallet: https://testnet.bscscan.com/address/0xF97Dca31ecC72b287b8Ac6b1a06589B71652FEc5
 
 # Contracts
 
@@ -79,9 +79,9 @@ As of today, we provide 2 main contracts for wodo gaming token (XWGT) and lock s
 
 ## Wodo Gaming Token Contract - XWGT
 
-WodoGamingToken contract is a stanrad ERC20 built upon openzeppelin contracts. It is created with 1B fixed total supply and not possible to mint(generate) additional tokens once the contracts is deployed. It offers token burning , pausing and account blocking functionalties to adress business critical aspects. 
+WodoGamingToken contract - contracts/wodo/WodoGamingToken.sol - is a stanrad ERC20 built upon openzeppelin contracts. It is created with 1B fixed total supply and not possible to mint(generate) additional tokens once the contracts is deployed. It offers token burning , pausing and account blocking functionalties to adress business critical aspects. 
 
-Multiple roles are defined, each allowed to perform different sets of actions described above. Also contract owner is assigned to admin role so that the owner can manage role assigments using the functions available in the contracts.
+Multiple roles are defined, each allowed to perform different sets of actions described above. Also contract owner is assigned to admin role so that the owner can manage role assigments using the functions available in the contract.
 
 ```code
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
@@ -125,7 +125,7 @@ Any token transferred to this contract will follow the vesting schedule as if th
 
 # Audits
 
-We initiated our auiditing process with Certik https://www.certik.com/projects/spintop-network . Certic team will run a full audit regarding full coarse of security aspects as well as source code integrity to make sure that smart contracts are deployed properly to the BCS mainnet and functions as explained in our documentation.
+We plan to manage our auiditing process with Certik https://www.certik.com. Certic team will run a full audit regarding full coarse of security aspects as well as source code integrity to make sure that smart contracts are deployed properly to the BCS mainnet and functions as explained in our documentation.
 
 We will share our audit reports.
 
