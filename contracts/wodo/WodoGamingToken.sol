@@ -17,7 +17,7 @@ contract WodoGamingToken is ERC20, ERC20Burnable, Pausable, AccessControlEnumera
     event UnBlocked(address indexed _account);
 
     constructor() ERC20("Wodo Gaming Token", "XWGT") {
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // see AccessControl.sol for this one
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender); // see openzeppelin/contracts/access/AccessControlEnumerable.sol for this one
         _grantRole(PAUSER_ROLE, msg.sender);
         _grantRole(BLOCKER_ROLE, msg.sender);
         _grantRole(BURNER_ROLE, msg.sender);
