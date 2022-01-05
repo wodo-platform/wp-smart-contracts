@@ -49,7 +49,7 @@ contract('WodoVestingWallet', function (accounts) {
       shouldBehaveLikeVesting(beneficiary);
     });
 
-    /*describe('WodoGamingToken vesting', function () {
+    describe('WodoGamingToken vesting', function () {
       beforeEach(async function () {
         this.token = await WodoGamingToken.new();
         this.getBalance = (account) => this.token.balanceOf(account);
@@ -62,6 +62,6 @@ contract('WodoVestingWallet', function (accounts) {
       });
 
       shouldBehaveLikeVesting(beneficiary);
-    });*/
+    });
   });
 });

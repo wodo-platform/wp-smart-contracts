@@ -66,7 +66,7 @@
 
 This module contains smart contracts implementation of the wodo gaming platform. The smart contracts are developed upon https://openzeppelin.com/ standards - version 4.4.1.
 
-Wodo gaming contracts are located in "contracts/wodo" folder. All other openzeppelin contracts are copied into "contracts" folder in order to deploy the wodo contracts smotthly and run the unit tests properly.
+Wodo gaming contracts are located in "contracts/wodo" folder.
 
 The contracts are deployed to BCS test networks. you can find the deatils and sourcecode of the contracts in the following links
 
