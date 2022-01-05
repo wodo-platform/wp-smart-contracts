@@ -89,7 +89,7 @@ function shouldBehaveLikeERC20 (errorPrefix, initialSupply, initialHolder, recip
             it('reverts', async function () {
               await expectRevert(
                 this.token.transferFrom(tokenOwner, to, amount, { from: spender }),
-                `${errorPrefix}: transfer amount exceeds balance`,
+                `VM Exception while processing transaction: reverted with reason string 'ERC20: transfer amount exceeds balance'`,
               );
             });
           });
@@ -108,7 +108,7 @@ function shouldBehaveLikeERC20 (errorPrefix, initialSupply, initialHolder, recip
             it('reverts', async function () {
               await expectRevert(
                 this.token.transferFrom(tokenOwner, to, amount, { from: spender }),
-                `${errorPrefix}: transfer amount exceeds allowance`,
+                `VM Exception while processing transaction: reverted with reason string 'ERC20: transfer amount exceeds allowance'`,
               );
             });
           });
@@ -123,7 +123,7 @@ function shouldBehaveLikeERC20 (errorPrefix, initialSupply, initialHolder, recip
             it('reverts', async function () {
               await expectRevert(
                 this.token.transferFrom(tokenOwner, to, amount, { from: spender }),
-                `${errorPrefix}: transfer amount exceeds balance`,
+                `VM Exception while processing transaction: reverted with reason string 'ERC20: transfer amount exceeds balance'`,
               );
             });
           });
@@ -140,7 +140,7 @@ function shouldBehaveLikeERC20 (errorPrefix, initialSupply, initialHolder, recip
 
         it('reverts', async function () {
           await expectRevert(this.token.transferFrom(
-            tokenOwner, to, amount, { from: spender }), `${errorPrefix}: transfer to the zero address`,
+            tokenOwner, to, amount, { from: spender }), `VM Exception while processing transaction: reverted with reason string 'ERC20: transfer to the zero address'`,
           );
         });
       });
@@ -176,7 +176,7 @@ function shouldBehaveLikeERC20Transfer (errorPrefix, from, to, balance, transfer
 
       it('reverts', async function () {
         await expectRevert(transfer.call(this, from, to, amount),
-          `${errorPrefix}: transfer amount exceeds balance`,
+          `VM Exception while processing transaction: reverted with reason string 'ERC20: transfer amount exceeds balance'`,
         );
       });
     });
@@ -225,7 +225,7 @@ function shouldBehaveLikeERC20Transfer (errorPrefix, from, to, balance, transfer
   describe('when the recipient is the zero address', function () {
     it('reverts', async function () {
       await expectRevert(transfer.call(this, from, ZERO_ADDRESS, balance),
-        `${errorPrefix}: transfer to the zero address`,
+        `VM Exception while processing transaction: reverted with reason string 'ERC20: transfer to the zero address'`,
       );
     });
   });
@@ -301,7 +301,7 @@ function shouldBehaveLikeERC20Approve (errorPrefix, owner, spender, supply, appr
   describe('when the spender is the zero address', function () {
     it('reverts', async function () {
       await expectRevert(approve.call(this, owner, ZERO_ADDRESS, supply),
-        `${errorPrefix}: approve to the zero address`,
+        `VM Exception while processing transaction: reverted with reason string 'ERC20: approve to the zero address'`,
       );
     });
   });

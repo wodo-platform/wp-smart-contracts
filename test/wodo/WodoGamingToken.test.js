@@ -16,10 +16,10 @@ contract('WodoGamingToken', function (accounts) {
   const name = 'Wodo Gaming Token';
   const symbol = 'XWGT';
 
-  const initialSupply = new BN(1000000000);
+  const initialSupply = new BN("1000000000000000000000000000");
 
   beforeEach(async function () {
-    this.token = await WodoGamingToken.new();
+    this.token = await WodoGamingToken.new({ from: initialHolder });
   });
 
   it('has a name', async function () {
@@ -33,5 +33,7 @@ contract('WodoGamingToken', function (accounts) {
   it('has 18 decimals', async function () {
     expect(await this.token.decimals()).to.be.bignumber.equal('18');
   });
+
+  shouldBehaveLikeERC20('WodoGamingToken', initialSupply, initialHolder, recipient, anotherAccount);
 
 });
