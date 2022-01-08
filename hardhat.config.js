@@ -83,13 +83,13 @@ module.exports = {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       chainId: 97,
       gasPrice: 20000000000,
-      accounts: {mnemonic: "material royal enhance category law area artist goose cake mind scan current"}
+      accounts: {mnemonic: process.env.ETHERSCAN_TESTNET_MNEMONIC}
     },
     mainnet: {
       url: "https://bsc-dataseed.binance.org/",
       chainId: 56,
-      gasPrice: 20000000000,
-      accounts: {mnemonic: "material royal enhance category law area artist goose cake mind scan current"}
+      //gasPrice: 20000000000,
+      accounts: {mnemonic: process.env.ETHERSCAN_MAINNET_MNEMONIC}
     }
   },
   gasReporter: {
@@ -99,7 +99,7 @@ module.exports = {
   },
   etherscan: {
     url: "https://testnet.bscscan.com/",
-    apiKey: "YIEW2KH6993Z4EPZ4EK44XAM5YDXV5A7W1"//process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
 };
 

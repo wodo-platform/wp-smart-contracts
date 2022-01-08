@@ -10,7 +10,7 @@ const { shouldBehaveLikeVesting } = require('./WodoVestingWallet.behavior');
 const min = (...args) => args.slice(1).reduce((x, y) => x.lt(y) ? x : y, args[0]);
 
 contract('WodoVestingWallet', function (accounts) {
-  const [ sender, beneficiary ] = accounts;
+  const [ sender, beneficiary, mockAddess ] = accounts;
 
   const amount = web3.utils.toBN(web3.utils.toWei('100'));
   const duration = web3.utils.toBN(4 * 365 * 86400); // 4 years

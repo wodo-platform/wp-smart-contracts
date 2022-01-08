@@ -139,16 +139,16 @@ Simple deployment scripts are implemented to run deployment and source publishin
 WogoGamingToken
 
 ```shell
-$ npx hardhat run --network testnet scripts/deploy_token.js
+$ npx hardhat run --network mainnet scripts/deploy_token.js
 
-WGT deployed to: 0x726Dc93175B455c1483fD31D2DF15C49275608b4
+WGT deployed to: 0xb2a6DEc1C393f94C3C1d043545175929f80e9292
 
 ```
 
 Verify contract by uploading the source codes
 
 ```shell
-$ npx hardhat verify --network testnet --contract contracts/wodo/WodoGamingToken.sol:WodoGamingToken 0x726Dc93175B455c1483fD31D2DF15C49275608b4
+$ npx hardhat verify --network mainnet --contract contracts/wodo/WodoGamingToken.sol:WodoGamingToken 0xb2a6DEc1C393f94C3C1d043545175929f80e9292
 ```
 
 Vesting Wallet
