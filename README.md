@@ -171,7 +171,7 @@ The contracts are deployed to BCS main network. you can find the deatils and sou
 ## Dev Team Locker Contract
 
 <p>
-- Dev Team  Account: 200M  XWGT locked in the vesting wallet till 01 February, 2023, will be released over 2 years period after the locking is revoked
+- Dev Team  Account: 150M  XWGT locked in the vesting wallet till 01 February, 2023, will be released over 2 years period after the locking is revoked
   
   * Address:0xD08826eAb186689dDc939571640a46fE01478B5C
   * url: https://bscscan.com/address/0xD08826eAb186689dDc939571640a46fE01478B5C
