@@ -11,11 +11,18 @@ const TOTAL_SUPPLY = 5 * ONE_BILLION;
 const WEI_DECIMALS = 18;
 const WEI = 10 ** WEI_DECIMALS;
 const WEI_ZEROES = '000000000000000000';
-const TODAY_SECONDS = hre.ethers.BigNumber.from(Math.floor(  (new Date().getTime() / 1000) ) + 86400);
-const DURATION = hre.ethers.BigNumber.from(1 * 86400);
+
+const cliff_date =  new Date(2022, 12, 31, 23, 59, 59, 0);
+const cliff_date_sec = cliff_date.getTime() + 3600000;
+
+//const CLIFF_PERIOD = hre.ethers.BigNumber.from(Math.floor(  (new Date().getTime() / 1000) ) + 86400); // --> total locked duration before vesting starts
+const CLIFF_PERIOD = hre.ethers.BigNumber.from(cliff_date_sec/1000); // --> total locked duration before vesting starts
 
 
-const ADDRESS_IN_COSTADY = "0x2Ada54c4deEc63a5C629122C673fEcBE38b67fB8";
+const DURATION = hre.ethers.BigNumber.from(63113904);
+
+
+const ADDRESS_IN_COSTADY = "0xD08826eAb186689dDc939571640a46fE01478B5C";
 
 async function main() {
   // Hardhat always runs the compile task when running scripts with its command
@@ -28,10 +35,10 @@ async function main() {
   // We get the contract to deploy
 
   const VestingWallet = await hre.ethers.getContractFactory("WodoVestingWallet");
-
+  
   const companyReserves = hre.ethers.utils.getAddress(ADDRESS_IN_COSTADY);
-  console.log("vestingWallet arguments: address:"+ADDRESS_IN_COSTADY+" , start:"+TODAY_SECONDS+" , duration:"+DURATION);
-  const vestingWallet = await VestingWallet.deploy(companyReserves,TODAY_SECONDS,DURATION);
+  console.log("vestingWallet arguments: address:"+ADDRESS_IN_COSTADY+" , start:"+CLIFF_PERIOD+" , duration:"+DURATION);
+  const vestingWallet = await VestingWallet.deploy(companyReserves,CLIFF_PERIOD,DURATION);
   await vestingWallet.deployed();
   console.log("VestingWallet deployed to:", vestingWallet.address);
 
