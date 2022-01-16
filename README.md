@@ -216,7 +216,7 @@ Each vesting vallet contratct deployed to the BSC mainnet exposed public methods
 <img src="images/vesting_wallet_duration.png">
 </p>
 
-- Validate the total released tokens so far on the read contracts tab. It is exposed as "released". It must be zero since the started date has not passed yet. You can refresh the page to retrieve the released value.
+- Validate the total released XWGT tokens so far on the read contracts tab. It is exposed via "released" function. Fill "0xb2a6DEc1C393f94C3C1d043545175929f80e9292" as XWGT token address. The retirn value must be zero since the started date has not passed yet. You can refresh the page to retrieve the released value.
 
 <p>
 <img src="images/vesting_wallet_released.png">
