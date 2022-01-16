@@ -142,7 +142,7 @@ The contracts are deployed to BCS main network. you can find the deatils and sou
 ## Company Reserves Locker Contract
 
 <p>
-- Company Reserves Account: 270M  XGT locked in the vesting wallet till 01 April, 2023, will be released over 2 years period after the locking is revoked
+- Company Reserves Account: 270M  XWGT locked in the vesting wallet till 01 April, 2023, will be released over 2 years period after the locking is revoked
   
   * Address: 0x1Ab5a251a872A44FdcB85FCa5793E676bD7aB72A
   * url: https://bscscan.com/address/0x1Ab5a251a872A44FdcB85FCa5793E676bD7aB72A
@@ -156,7 +156,7 @@ The contracts are deployed to BCS main network. you can find the deatils and sou
 ## Play to Earn Locker Contract
 
 <p>
-- Play to Earn  Account: 200M  XGT locked in the vesting wallet till 01 August, 2022, will be released over 10 years period after the locking is revoked
+- Play to Earn  Account: 200M  XWGT locked in the vesting wallet till 01 August, 2022, will be released over 10 years period after the locking is revoked
     
   * Address:0x06FFB27743A561f22DAa9f87999A53610038DA79
   * url: https://bscscan.com/address/0x06FFB27743A561f22DAa9f87999A53610038DA79
@@ -171,7 +171,7 @@ The contracts are deployed to BCS main network. you can find the deatils and sou
 ## Dev Team Locker Contract
 
 <p>
-- Dev Team  Account: 200M  XGT locked in the vesting wallet till 01 February, 2023, will be released over 2 years period after the locking is revoked
+- Dev Team  Account: 200M  XWGT locked in the vesting wallet till 01 February, 2023, will be released over 2 years period after the locking is revoked
   
   * Address:0xD08826eAb186689dDc939571640a46fE01478B5C
   * url: https://bscscan.com/address/0xD08826eAb186689dDc939571640a46fE01478B5C
