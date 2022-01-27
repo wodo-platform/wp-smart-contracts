@@ -22,6 +22,8 @@ import "@openzeppelin/contracts/finance/VestingWallet.sol";
  */
 contract WodoVestingWallet is VestingWallet, Ownable {
 
+    uint64 private _additionalStartTime = 0;
+
     constructor(
         address beneficiaryAddress,
         uint64 startTimestamp,
@@ -59,5 +61,40 @@ contract WodoVestingWallet is VestingWallet, Ownable {
         } else {
             return (totalAllocation * (timestamp - start())) / duration();
         }
+    }
+
+    /**
+    *  extend the lock period by the given positve value as seconds.
+    *  eg: The initial start time was set as 1643323714 (Thu Jan 27 2022 22:48:34 GMT+0000) 
+    *      and the lock release date needs to be extended for additional 10 days. This method is invoked by the owner
+    *      with the value 864000, which is 10 days in seconds, to extend cumulative lock period. 
+    *      "start()" method of the actual openzeppelin contract, which is overridden below, takes the  extened
+    *      lock value into account while calculating release time in "_vestingSchedule" method above.
+    *    
+    *  validation-1: the given addedTimeSeconds value should be greater than zero. 
+    *  validation-2: the given addedTimeSeconds cannot be less than the previous addedTimeSeconds to prevent the lock period from being moved earlier in time. 
+    *  validation-3: if the vesting starts, the lock period can not be extended anymore -> uint64(block.timestamp) >= start()
+    *
+     */
+    function extendLockPeriod(int64 addedTimeSeconds) external virtual onlyOwner {
+        // ensures that the added lock period value is greater than zero and the current value so that the total lock value (iniital + added) can not be decreased. 
+        require(addedTimeSeconds > 0, "addedTimeSeconds should be greater than zero");
+        require(uint64(addedTimeSeconds) > _additionalStartTime, "addedTimeSeconds should be greater than the current addedTimeSeconds .");
+        require(uint64(block.timestamp) < start(), "Vesting has already started.The lock time can not be extended.");
+        _additionalStartTime = uint64(addedTimeSeconds);
+    }
+
+    /**
+     * @dev Getter for the start timestamp.
+     */
+    function start() public view override returns (uint256) {
+        return super.start() + additionalStartTime();
+    }
+
+    /**
+     * @dev Getter for the start timestamp.
+     */
+    function additionalStartTime() public view virtual returns (uint256) {
+        return _additionalStartTime;
     }
 }
